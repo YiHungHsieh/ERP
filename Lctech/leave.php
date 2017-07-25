@@ -42,7 +42,7 @@
 		<p>假勤項目：<input type="text" name="" value=""></p>
 		<p>職務代理人：<input type="text" name="" value=""></p>
 		<p>簽核代理人：<input type="text" name="" value=""></p>
-		<p>請假原因：<input type="text" name="" value=""></p>
+		<p>說明：<input type="text" name="" value=""></p>
 		<input type="submit" value="Submit">
 		</form>
 	</div>
