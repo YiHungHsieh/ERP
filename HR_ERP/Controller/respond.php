@@ -11,7 +11,7 @@ $password = "root";
 $dbname = "peopleresource";
 
 				$conn = mysqli_connect($servername,$username ,$password,$dbname);
-			    $sql = "SELECT * FROM `news` WHERE id='".$_GET['id']."'";
+			  $sql = "SELECT * FROM `news` WHERE id='".$_GET['id']."'";
 				$result = mysqli_query($conn,$sql);
 				$row=mysqli_fetch_array($result);
 				$check=strpos($row['respond'],$_SESSION['name']);
