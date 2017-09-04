@@ -1,13 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "peopleresource";
+
+require 'conn.php';
+
 $reason=$_GET['reason'];
 $name=$_GET['name'];
-try {
-    $conn = mysqli_connect($servername,$username ,$password,$dbname);
-    
 
     switch ($_GET['table']) {
       case 'btrip':
@@ -125,10 +121,5 @@ try {
       default:
         break;
       }
-    }
-catch(PDOException $e)
-    {
-    echo $sql . "<br>" . $e->getMessage();
-    }
 
 ?>
