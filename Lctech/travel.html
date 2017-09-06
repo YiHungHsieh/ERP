@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>出差申請</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="travel-style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$( function() {
+			var dateFormat = "mm/dd/yy",
+			from = $( "#from" ).datepicker({
+				defaultDate: "+0D",
+				changeMonth: true,
+				numberOfMonths: 1})
+        .on( "change", function() {
+			to.datepicker( "option", "minDate", getDate( this ) );}),
+			to = $( "#to" ).datepicker({
+				defaultDate: "+1w",
+				changeMonth: true,
+				numberOfMonths: 1})
+		.on( "change", function() {
+			from.datepicker("option", "maxDate", getDate( this ) );});
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );
+  </script>
+
+</head>
+<body>
+	<div class="top-black">
+		<a href="index.html">
+			<img class="leftside" src="http://www.lctech.com.tw/wp-content/uploads/bfi_thumb/%E6%9C%AA%E5%91%BD%E5%90%8D-1-%E6%8B%B7%E8%B2%9D-31w65e1o8bhj94p9q5patm@2x.png" width="80" height="80">
+		</a>
+		<p class="leftside" style="color:white;font-size:60px;margin-left:150px;font-family:Arial;margin-top:30px;margin-bottom:0px">Lei Chi Technology</p>
+		<ul class="drop-down-menu">
+			<li><a href="#">線上打卡</a>
+			</li>
+			<li><a href="#">表單申請</a>
+				<ul>
+					<li><a href="#">請假申請</a>
+					</li>
+					<li><a href="#">出差申請</a>
+					</li>
+					<li><a href="#">差旅費</a>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#">內部公告</a>
+		</ul>
+	</div>
+	<div class="bottom">
+	<div class="left"> 
+		<h1 class="profile">表單申請</h1>
+		<!--<div class="face">
+		</div>-->
+		<p class="pp">出差申請</p>
+		<a href="#" >
+		<p class="pp">請假申請</p>
+		</a>
+		<a href="#" >
+		<p class="pp">差旅費申請</p>
+		</a>
+	</div>
+	<div class="right-up">
+		<h1 class="profile">出差申請<h1>
+		<p class="p">預計出發日期: <input type="text" id="from" name="from"></p>
+		<p class="p">預計結束日期: <input type="text" id="to" name="to"></p>
+		<p class="p">出差類型:<input type="radio" name="Type" value="Domestic">國內   <input type="radio" name="Type" value="foreign">國外</p>
+		<p class="p">交通需求:<input type="radio" name="Transport" value="train">火車   <input type="radio" name="Transport" value="air" >飛機   <input type="radio" name="Transport" value="hsr" >高鐵   <input type="radio" name="Transport" value="other" >其他</p>
+		<p class="p">出差地點: <input type="text" name="destination" size="15"></p>
+		<p class="p">出差事由: <input type="text" name="purpose" size="50"></p>
+		<button class="btn">送出表單</button>
+	</div>
+	
+	</div>
+</body>
+</html>
